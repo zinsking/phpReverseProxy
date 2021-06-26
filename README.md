@@ -25,8 +25,12 @@ PHP 反向代理
 ## 搭建反代（基于 lnmp）
 
 ```shell
-#!/bin/sh
-
+#!/bin/bash
+apt update
+apt install wget php-cli php-zip unzip -y
+wget -O composer-setup.php https://getcomposer.org/installer
+php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+#####
 originProtocol="http"
 originSite="baidu.com"
 thisSite="example.com"
